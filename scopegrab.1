@@ -1,0 +1,39 @@
+'\" t
+.\" ** The above line should force tbl to be a preprocessor **
+.\" Man page for ScopeGrab
+.\"
+.\" Copyright (C) 2002, Steven J. Merrifield
+.TH ScopeGrab 1 "March 2002" "scopegrab" "ScopeMeter Screen Capture"
+.SH NAME
+ScopeGrab \- Screen capture utility for Fluke ScopeMeter
+.SH SYNOPSIS
+.B scopegrab
+<device> <p|b> <filename>
+.SH DESCRIPTION
+.B ScopeGrab
+is a utility for capturing and saving images from the screen of a Fluke
+ScopeMeter. It requires a serial cable to be connected between the host
+computer and the optical port on the ScopeMeter.
+.SH PARAMETERS
+.TP
+.B device
+The name of the serial port must be specified here. Typically, this would
+be something like /dev/ttyS0 or /dev/ttyS1. The user must have appropriate
+permission to access this port.
+.TP 
+.B p
+Save the data in Postscript format. The image is saved with it's own 
+pre-defined bounding box.
+.TP
+.B b
+Save the data in X11 bitmap format.
+.TP
+.B filename
+The name of the file to save the captured image as. If the file exists, it
+will be over-written.
+.SH AUTHOR
+.B
+ScopeGrab
+was written by Steven J. Merrifield 
+
+Copyright (c) 2002
