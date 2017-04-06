@@ -1,7 +1,7 @@
 /*
  * Capture a screendump from a Fluke ScopeMeter.
  *
- * Copyright (c) 2002 by Steven J. Merrifield <steve@labyrinth.net.au>
+ * Copyright (c) 2002-2017 by Steven J. Merrifield <info at stevenmerrifield.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ void catch_alarm(int dummy)
 void usage(char *s)
 {
 	fprintf(stderr,"Capture a screendump from a Fluke ScopeMeter\n");
-	fprintf(stderr,"(c) 2002-6 by Steven J. Merrifield\n\n");
+	fprintf(stderr,"(c) 2002-2017 by Steven J. Merrifield\n\n");
 	fprintf(stderr,"Usage: %s <device> <p|b> <filename>\n\n",s);
 	fprintf(stderr,"   device:   serial port to connect to\n");
 	fprintf(stderr,"   p:        save image in Postscript format\n");
@@ -126,7 +126,7 @@ char remap(char ch)
 int main(int argc, char **argv)
 {
 	struct termios options;
-	char buffer[8192];
+	char buffer[16384];
 	char orig_image[65535];
 	char new_image[65535];
 	int nbytes;
@@ -216,6 +216,7 @@ int main(int argc, char **argv)
 	timeout = 0;
 	printf("Reading data...\n");
 
+	j=0;
 	while (!timeout)
 	{
 		nbytes = read(fd,buffer,sizeof(buffer));

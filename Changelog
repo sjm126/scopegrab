@@ -1,7 +1,9 @@
 sjm - 26 Mar 2006: 
+	- Changed sleep(2) to sleep(3) to prevent the "resource temporarily 
+	unavailable" error. Seems to be more of an issue with faster machines.
+	- Included stdlib.h for the exit() function
 
-	Changed sleep(2) to sleep(3) to prevent the 
-	"resource temporarily unavailable" error. Seems to be more of
-	an issue with faster machines.
-
-	Included stdlib.h for the exit() function
+sjm - 06 Apr 2017:
+	- Fix uninitialised variable
+	- Added utility to log up to 4 channels of discrete data
+	- Updated copyright dates
